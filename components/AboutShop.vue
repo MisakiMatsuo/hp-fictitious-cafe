@@ -1,0 +1,77 @@
+<template>
+  <v-parallax :height="parallax.height" :src="parallax.src">
+    <v-container>
+      <v-row justify="center" align="center" class="px-10">
+        <v-spacer />
+        <v-col cols="12" sm="7" class="pa-0">
+          <div class="mb-6">
+            <div class="py-1 mx-auto mb-6 text-h6 about-title">
+              {{ title }}
+            </div>
+            <template v-for="(subTitle, index) of subTitles">
+              <div :key="`detail-${index}`" class="mb-1 text-center sub-font">
+                {{ subTitle }}
+              </div>
+            </template>
+          </div>
+          <div v-for="(detail, index) of details" :key="`detail-${index}`">
+            <p class="font-weight-bold">{{ detail }}</p>
+            <br v-if="index !== details.length - 1" />
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-parallax>
+</template>
+
+<script lang='ts'>
+import Vue from 'vue';
+
+interface AboutShopData {
+  parallax: {
+    src: string;
+    height: number;
+  };
+  title: string;
+  subTitles: string[];
+  details: string[];
+}
+
+export default Vue.extend({
+  name: 'AboutShop',
+  data(): AboutShopData {
+    return {
+      parallax: {
+        src: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
+        height: 839,
+      },
+      title: '-About- 当店について',
+      subTitles: [
+        '丁寧に育む手づくりの味',
+        '“ここだけ”の',
+        '美味しさと喜びを',
+      ],
+      details: [
+        'JR他各線「錦糸町駅」より徒歩10分。東京都墨田区の「uni CAFE（ウニ カフェ）」は、素材の1つ1つにこだわった様々なメニューをお届けしています。',
+        'uni」とは、フィンランド語で「夢」や「1」という意味を持ちます。イタリアンレストランでスイーツを担当していたシェフによる彩り豊かなお菓子の数々からは、きっと“ここでしか味わえない”という特別さを感じていただけるはず。中でも当店自慢の“プリンパフェ”は、各種メディアに取り上げられ、SNSでも話題沸騰の人気メニューです。',
+        'そんな当店の美味しさをもっと大勢の人達に味わっていただけるよう、この度通販によるお取り寄せをスタート。ちょっとした自分へのご褒美はもちろん、ギフトや記念日のプレゼントにもぴったりです。どうぞ思い思いのシーンに、uni CAFEの贈り物をご利用ください。',
+      ],
+    }
+  },
+})
+</script>
+
+<style scoped>
+.about-title {
+  text-align: center;
+  border: 1px solid;
+  letter-spacing: .2rem !important;
+  width: 50%;
+}
+
+.sub-font {
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+}
+</style>
+
