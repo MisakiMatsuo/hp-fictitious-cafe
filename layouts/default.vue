@@ -32,7 +32,7 @@
       <Nuxt />
     </v-main>
     <v-footer height="220" absolute app padless>
-      <v-card color="#eee" height="220" class="flex text-center" flat tile>
+      <v-card height="220" color="white" class="flex text-center" flat tile>
         <v-card-title class="pt-16 text-subtitle-1 d-flex justify-center footer-line">
           ©uni CAFE. All Rights Reserved.
         </v-card-title>
