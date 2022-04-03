@@ -1,4 +1,4 @@
-# lp-cafe
+# hp-fictitious-cafe
 
 ## Build Setup
 
