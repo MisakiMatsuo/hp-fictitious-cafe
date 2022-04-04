@@ -1,9 +1,12 @@
 <template>
   <div id="main">
-    <section class="py-16">
+    <section>
+      <AbsoluteHeader />
+    </section>
+    <section class="pt-8 pb-16">
       <MainCarousel />
     </section>
-    <section>
+    <section id="aboutShop">
       <AboutShop />
     </section>
     <section id="useScene" class="py-16">
@@ -17,8 +20,7 @@
     </section>
     <section id="movie" class="py-16">
       <v-container class="text-center">
-        <div class="text-h6">Comment</div>
-        <div class="mb-10 text-h4">生産者の声</div>
+        <SectionTitle title="生産者の声" sub-title="Comment" />
         <div>
           <video
             autoplay
@@ -37,6 +39,7 @@
 
 <script lang='ts'>
 import Vue from 'vue';
+import AbsoluteHeader from '@/components/AbsoluteHeader.vue';
 import MainCarousel from '@/components/MainCarousel.vue';
 import AboutShop from '@/components/AboutShop.vue';
 import UseScene from '@/components/UseScene.vue';
@@ -46,6 +49,7 @@ import PickUp from '@/components/PickUp.vue';
 export default Vue.extend({
   name: 'IndexPage',
   components: {
+    AbsoluteHeader,
     MainCarousel,
     AboutShop,
     UseScene,

@@ -1,11 +1,10 @@
 <template>
-  <v-row>
+  <v-row class="my-16">
     <v-col cols="6" class="pa-0">
       <v-img :src="img.src" />
     </v-col>
     <v-col cols="6" class="pa-0">
-      <div class="text-h6 text-center">{{ subTitle }}</div>
-      <div class="mb-12 text-h4 text-center">{{ title }}</div>
+      <SectionTitle :title="title" :sub-title="subTitle" />
       <v-list-item
         v-for="(commitment, index) of commitments"
         :key="`commitment-${index}`"
@@ -26,8 +25,9 @@
 
 <script lang='ts'>
 import Vue from 'vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
-interface UseSceneData {
+interface ShopCommitmentData {
   img: {
     src: string;
   };
@@ -38,7 +38,8 @@ interface UseSceneData {
 
 export default Vue.extend({
   name: 'ShopCommitment',
-  data(): UseSceneData {
+  components: { SectionTitle },
+  data(): ShopCommitmentData {
     return {
       img: {
         src: 'https://cdn.vuetifyjs.com/images/parallax/material2.jpg',

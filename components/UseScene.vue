@@ -1,7 +1,6 @@
 <template>
-  <v-container>
-    <div class="text-h6 text-center">{{ subTitle }}</div>
-    <div class="mb-10 text-h4 text-center">{{ title }}</div>
+  <v-container class="my-16">
+    <SectionTitle :title="title" :sub-title="subTitle" />
     <v-row justify="center" align="center" class="px-10">
       <v-col
         v-for="(detail, index) of details"
@@ -21,6 +20,7 @@
 
 <script lang='ts'>
 import Vue from 'vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 interface UseSceneData {
   title: string;
@@ -36,6 +36,7 @@ interface UseSceneData {
 
 export default Vue.extend({
   name: 'UseScene',
+  components: { SectionTitle },
   data(): UseSceneData {
     return {
       title: 'こんな時に',
@@ -58,18 +59,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style scoped>
-.about-title {
-  text-align: center;
-  border: 1px solid;
-  letter-spacing: .2rem !important;
-  width: 50%;
-}
-
-.sub-font {
-  font-size: 1.8rem;
-  letter-spacing: .2rem;
-}
-</style>
-

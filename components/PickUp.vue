@@ -1,7 +1,6 @@
 <template>
   <v-container class="mt-16">
-    <div class="text-h6 text-center">Pick Up</div>
-    <div class="mb-10 text-h4 text-center">おすすめ商品</div>
+    <SectionTitle :title="title" :sub-title="subTitle" />
     <div class="mb-16 text-body-1 text-center">※表示価格は全て税込みです。<br />※別途送料が掛かります。</div>
     <v-row
       v-for="(product, index) of products"
@@ -34,8 +33,9 @@
 
 <script lang='ts'>
 import Vue from 'vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
-interface UseSceneData {
+interface PickUpData {
   img: {
     src: string;
   };
@@ -51,14 +51,15 @@ interface UseSceneData {
 }
 
 export default Vue.extend({
-  name: 'ShopCommitment',
-  data(): UseSceneData {
+  name: 'PickUp',
+  components: { SectionTitle },
+  data(): PickUpData {
     return {
       img: {
         src: 'https://cdn.vuetifyjs.com/images/parallax/material2.jpg',
       },
-      title: '3つのこだわり',
-      subTitle: 'Feature',
+      title: 'おすすめ商品',
+      subTitle: 'Pick Up',
       products: [
         {
           img: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
@@ -87,6 +88,14 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.subTitle {
+  letter-spacing: .3rem !important;
+}
+
+.title {
+  letter-spacing: .5rem !important;
+}
+
 .product-name {
   font-size: 1.9rem;
   letter-spacing: 0.3rem;

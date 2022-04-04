@@ -2,9 +2,9 @@
   <v-app dark>
     <v-app-bar
       id="header"
+      ref="header"
       app
       flat
-      fixed
       color="white"
       height="80px"
     >
@@ -23,12 +23,12 @@
           vertical
           class="mx-1 divider" />
       </template>
-      <v-btn large tile flat dark color="black" class="ml-7">
+      <v-btn large tile dark color="black" class="ml-7">
         <v-icon>mdi-cart-outline</v-icon>&nbsp;&nbsp;通販サイト
       </v-btn>
       <v-spacer />
     </v-app-bar>
-    <v-main>
+    <v-main class="pt-0">
       <Nuxt />
     </v-main>
     <v-footer height="220" absolute app padless>
@@ -66,8 +66,6 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
-      clipped: false,
-      fixed: false,
       menus: [
         {
           title: 'トップ',
@@ -116,15 +114,36 @@ export default {
       ],
     }
   },
+  mounted() {
+    this.isShowHeader();
+  },
   methods: {
     gotoSelectedVendor(id) {
       this.$vuetify.goTo(id);
-    }
+    },
+    isShowHeader() {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          this.$refs.header.$el.classList.add('is-show');
+        } else {
+          this.$refs.header.$el.classList.remove('is-show');
+        }
+      });
+    },
   },
 }
 </script>
 
 <style scoped>
+#header {
+  top: -80px;
+}
+
+#header.is-show {
+  top: 0;
+  transition: .3s;
+}
+
 .menu-btn {
   height: 80px;
 }
