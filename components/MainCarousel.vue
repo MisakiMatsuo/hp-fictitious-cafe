@@ -2,18 +2,19 @@
   <v-container>
     <v-carousel
       cycle
-      hide-delimiter-background
-      interval="10000"
+      interval="4000"
       :show-arrows="false"
     >
       <v-carousel-item
         v-for="(carousel, index) in carousels"
         :key="`slide-${index}`"
         :src="carousel.src"
+        reverse-transition="fade-transition"
+        transition="fade-transition"
       >
-        <v-row class="fill-height" align="center" justify="center">
-          <div class="text-h2">{{ carousel.text }}</div>
-        </v-row>
+<!--        <v-row class="fill-height" align="center" justify="center">-->
+<!--          <div class="text-h2">{{ carousel.text }}</div>-->
+<!--        </v-row>-->
       </v-carousel-item>
     </v-carousel>
   </v-container>
@@ -35,11 +36,11 @@ export default Vue.extend({
     return {
       carousels: [
         {
-          src: 'https://picsum.photos/510/300?random',
+          src: 'https://picsum.photos/520/300?random',
           text: 'First',
         },
         {
-          src: 'https://picsum.photos/510/300?random',
+          src: 'https://picsum.photos/515/300?random',
           text: 'Second',
         },
         {
@@ -51,3 +52,13 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style>
+.v-window__container {
+  transition: 0.3s cubic-bezier(0, 0.13, 0, 1);
+}
+
+.v-item-group {
+  transition: 0.3s cubic-bezier(0, 0.13, 0, 1);
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <v-row class="my-16">
+  <v-row class="my-10">
     <v-col cols="6" class="pa-0">
       <v-img :src="img.src" />
     </v-col>

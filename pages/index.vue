@@ -19,20 +19,16 @@
       <PickUp />
     </section>
     <section id="movie" class="py-16">
-      <v-container class="text-center">
-        <SectionTitle title="生産者の声" sub-title="Comment" />
-        <div>
-          <video
-            autoplay
-            muted
-            src="static/test.mov"
-            controls="controls"
-            width="800" />
-        </div>
-      </v-container>
+      <ProducersVoice />
     </section>
     <section id="products" class="py-16">
       <ProductItems />
+    </section>
+    <section id="payment" class="py-16">
+      <PaymentInfo />
+    </section>
+    <section id="shopInfo" class="py-16">
+      <ShopInfo />
     </section>
   </div>
 </template>
@@ -45,7 +41,9 @@ import AboutShop from '@/components/AboutShop.vue';
 import UseScene from '@/components/UseScene.vue';
 import ShopCommitment from '@/components/ShopCommitment.vue';
 import PickUp from '@/components/PickUp.vue';
+import ProducersVoice from '@/components/ProducersVoice.vue';
 import ProductItems from '@/components/ProductItems.vue';
+import PaymentInfo from '@/components/PaymentInfo.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -56,7 +54,9 @@ export default Vue.extend({
     UseScene,
     ShopCommitment,
     PickUp,
+    ProducersVoice,
     ProductItems,
+    PaymentInfo,
   },
 })
 </script>

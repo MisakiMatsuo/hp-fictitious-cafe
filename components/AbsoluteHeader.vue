@@ -3,7 +3,7 @@
     <div class="px-8 py-4 text-body-2 text-right">{{ title }}</div>
     <v-container>
       <v-row class="mb-8">
-        <v-col cols="3">
+        <v-col cols="2">
           <div class="logo">
             <nuxt-link to="/" class="logo-link black--text">
               <div class="py-4 text-h2 font-weight-bold main-logo">
@@ -16,7 +16,7 @@
           </div>
         </v-col>
         <v-spacer />
-        <v-col cols="6" class="d-flex justify-end align-center">
+        <v-col cols="5" class="d-flex justify-end align-center">
           <v-btn :ripple="false" icon x-large color="black" class="active-el">
             <v-icon>mdi-instagram</v-icon>
           </v-btn>
@@ -70,9 +70,9 @@ export default Vue.extend({
   name: 'AbsoluteHeader',
   data(): AbsoluteHeaderData {
     return {
-      title: 'uni CAFE・ウニカフェ｜東京・錦糸町のカフェスイーツをお取り寄せ',
+      title: 'sample CAFE・サンプルカフェ｜東京・日暮里のカフェスイーツをお取り寄せ',
       logo: {
-        main: 'uni Cafe',
+        main: 'sample CAFE',
         sub: 'Online Shop',
       },
       menus: [
@@ -83,7 +83,7 @@ export default Vue.extend({
         },
         {
           title: 'Feature',
-          subTitle: 'こだわり',
+          subTitle: '3つのこだわり',
           to: '#shopCommitment',
         },
         {
@@ -97,14 +97,14 @@ export default Vue.extend({
           to: '#products',
         },
         {
-          title: 'Information',
+          title: 'Payment',
           subTitle: '送料・お支払い',
           to: '#payment',
         },
         {
           title: 'Shop',
           subTitle: '店舗情報',
-          to: '#storeInfo',
+          to: '#shopInfo',
         },
       ],
       tabImg: require('~/static/groovepaper.png'),

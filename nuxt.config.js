@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - lp-cafe',
-    title: 'lp-cafe',
+    titleTemplate: '%s',
+    title: 'sample CAFE・サンプルカフェ｜東京・日暮里のカフェスイーツをお取り寄せ',
     htmlAttrs: {
       lang: 'en'
     },

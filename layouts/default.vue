@@ -103,7 +103,7 @@ export default Vue.extend({
         },
         {
           title: '店舗情報',
-          to: '#storeInfo',
+          to: '#shopInfo',
         },
       ],
       snsLinks: [
