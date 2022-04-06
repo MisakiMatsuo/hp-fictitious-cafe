@@ -32,7 +32,7 @@
       </v-container>
     </section>
     <section id="products" class="py-16">
-      <UseScene />
+      <ProductItems />
     </section>
   </div>
 </template>
@@ -45,6 +45,7 @@ import AboutShop from '@/components/AboutShop.vue';
 import UseScene from '@/components/UseScene.vue';
 import ShopCommitment from '@/components/ShopCommitment.vue';
 import PickUp from '@/components/PickUp.vue';
+import ProductItems from '@/components/ProductItems.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -55,6 +56,7 @@ export default Vue.extend({
     UseScene,
     ShopCommitment,
     PickUp,
+    ProductItems,
   },
 })
 </script>

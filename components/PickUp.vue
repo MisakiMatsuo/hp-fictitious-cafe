@@ -88,14 +88,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.subTitle {
-  letter-spacing: .3rem !important;
-}
-
-.title {
-  letter-spacing: .5rem !important;
-}
-
 .product-name {
   font-size: 1.9rem;
   letter-spacing: 0.3rem;

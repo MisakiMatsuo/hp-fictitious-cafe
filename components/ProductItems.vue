@@ -12,24 +12,35 @@ import ThreeColumns from '@/components/ThreeColumns.vue';
 import { ColumnItemData } from '@/types/models/componentType';
 
 export default Vue.extend({
-  name: 'UseScene',
+  name: 'ProductItems',
   components: { SectionTitle, ThreeColumns },
   data(): ColumnItemData {
     return {
-      title: 'こんな時に',
-      subTitle: 'Scene',
+      title: '商品一覧',
+      subTitle: 'Products',
       details: [
         {
           src: 'https://picsum.photos/500/300?random',
-          texts: ['ご家族やご友人と一緒に', '賑わう誕生日に',],
+          texts: [
+            'クッキー詰め合わせ',
+            '2,800円'
+          ],
         },
         {
           src: 'https://picsum.photos/500/300?random',
-          texts: ['などのイベントに', '賑わう誕生日に'],
+          texts: [
+            '自家製プリン',
+            '6個セット 2,400円',
+            '※冷蔵でのお届け となります。'
+          ],
         },
         {
           src: 'https://picsum.photos/500/300?random',
-          texts: ['お世話になっている', 'あの人への手土産に'],
+          texts: [
+            'ベイクドチーズケーキ',
+            '1ホール（直径12cm） 2,800円',
+            '※冷凍でのお届け となります。'
+          ],
         },
       ],
     }

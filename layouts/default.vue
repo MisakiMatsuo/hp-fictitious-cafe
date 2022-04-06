@@ -60,11 +60,25 @@
   </v-app>
 </template>
 
-<script>
+<script lang='ts'>
+import Vue from 'vue';
 
-export default {
+interface DefaultLayoutData {
+  menus: {
+    title: string;
+    to: string;
+  }[];
+  snsLinks: {
+    title: string;
+    icon: string;
+    color: string;
+    to: string;
+  }[];
+}
+
+export default Vue.extend({
   name: 'DefaultLayout',
-  data() {
+  data(): DefaultLayoutData {
     return {
       menus: [
         {
@@ -118,20 +132,20 @@ export default {
     this.isShowHeader();
   },
   methods: {
-    gotoSelectedVendor(id) {
-      this.$vuetify.goTo(id);
+    gotoSelectedVendor(id: string): void {
+      (this as any).$vuetify.goTo(id);
     },
-    isShowHeader() {
+    isShowHeader(): void {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 200) {
-          this.$refs.header.$el.classList.add('is-show');
+          (this as any).$refs.header.$el.classList.add('is-show');
         } else {
-          this.$refs.header.$el.classList.remove('is-show');
+          (this as any).$refs.header.$el.classList.remove('is-show');
         }
       });
     },
   },
-}
+})
 </script>
 
 <style scoped>
