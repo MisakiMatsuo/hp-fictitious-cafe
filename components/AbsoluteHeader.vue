@@ -36,7 +36,7 @@
           :key="`menu-${index}`"
           :ripple="false"
           class="pa-0 d-block black--text active-el align-center"
-          :to="menu.to"
+          @click="gotoSelectedVendor(menu.to)"
         >
           <v-img :src="tabImg" min-width="130px" max-width="150px">
             <div class="pt-3 text-body-1 font-weight-bold menu-en">{{ menu.title }}</div>
@@ -109,6 +109,11 @@ export default Vue.extend({
       ],
       tabImg: require('~/static/groovepaper.png'),
     }
+  },
+  methods: {
+    gotoSelectedVendor(id: string): void {
+      (this as any).$vuetify.goTo(id);
+    },
   },
 })
 </script>

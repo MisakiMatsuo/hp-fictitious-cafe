@@ -1,7 +1,7 @@
 <template>
-  <v-parallax :height="parallax.height" :src="parallax.src">
+  <div class="parallax">
     <v-container>
-      <v-row justify="center" align="center" class="px-10">
+      <v-row justify="center" align="center" class="pt-16 px-10">
         <v-spacer />
         <v-col cols="12" sm="7" class="pa-0">
           <div class="mb-6">
@@ -21,17 +21,13 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-parallax>
+  </div>
 </template>
 
 <script lang='ts'>
 import Vue from 'vue';
 
 interface AboutShopData {
-  parallax: {
-    src: string;
-    height: number;
-  };
   title: string;
   subTitles: string[];
   details: string[];
@@ -41,10 +37,6 @@ export default Vue.extend({
   name: 'AboutShop',
   data(): AboutShopData {
     return {
-      parallax: {
-        src: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
-        height: 839,
-      },
       title: '-About- 当店について',
       subTitles: [
         '丁寧に育む手づくりの味',
@@ -62,6 +54,17 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.parallax {
+  color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 839px;
+  width: 100vw;
+  background-image: url('https://cdn.vuetifyjs.com/images/parallax/material.jpg');
+}
+
 .about-title {
   text-align: center;
   border: 1px solid;

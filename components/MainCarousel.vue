@@ -2,7 +2,7 @@
   <v-container>
     <v-carousel
       cycle
-      interval="4000"
+      :interval="7000"
       :show-arrows="false"
     >
       <v-carousel-item
@@ -53,12 +53,16 @@ export default Vue.extend({
 })
 </script>
 
-<style>
-.v-window__container {
-  transition: 0.3s cubic-bezier(0, 0.13, 0, 1);
-}
-
-.v-item-group {
-  transition: 0.3s cubic-bezier(0, 0.13, 0, 1);
+<style lang="scss" scoped>
+.v-window {
+  &-x-transition,
+  &-x-reverse-transition,
+  &-y-transition,
+  &-y-reverse-transition {
+    &-enter-active,
+    &-leave-active {
+      transition: 3s cubic-bezier(0.25, 0.8, 0.5, 3) !important;
+    }
+  }
 }
 </style>

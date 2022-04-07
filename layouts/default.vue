@@ -12,7 +12,7 @@
       <template v-for="(menu, index) of menus">
         <v-tab
           :key="`btn-${index}`"
-          v-ripple="false"
+          :ripple="false"
           class="mx-4 px-0 text-body-1 menu-btn"
           @click="gotoSelectedVendor(menu.to)"
         >
@@ -24,7 +24,8 @@
           class="mx-1 divider" />
       </template>
       <v-btn large tile dark color="black" class="ml-7">
-        <v-icon>mdi-cart-outline</v-icon>&nbsp;&nbsp;通販サイト
+        <v-icon>mdi-cart-outline</v-icon>
+        <span class="pl-2 font-weight-bold">通販サイト</span>
       </v-btn>
       <v-spacer />
     </v-app-bar>
